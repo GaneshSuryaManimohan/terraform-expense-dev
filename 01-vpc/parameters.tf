@@ -3,3 +3,18 @@ resource "aws_ssm_parameter" "vpc_id" {
   type  = "String"
   value = module.vpc.vpc_id
 }
+
+# ["id1", "id2"] --> this is terraform format
+# id1, id2 --> this is AWS SSM StringList format
+# to convert list to stringlist we are using join function
+resource "aws_ssm_parameter" "public_subnet_ids" {
+  name  = "/${var.project_name}/${var.environment}/public_subnet_ids"
+  type  = "StringList"
+  value = join(",",module.vpc.public_subnet_ids)
+}
+
+resource "aws_ssm_parameter" "private_subnet_ids" {
+  name  = "/${var.project_name}/${var.environment}/private_subnet_ids"
+  type  = "StringList"
+  value = join(",", module.vpc.private_subnet_ids)
+}

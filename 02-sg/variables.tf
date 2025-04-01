@@ -32,3 +32,11 @@ variable "backend_sg_description" {
 variable "frontend_sg_description" {
   default = "SG for frontend"
 }
+
+variable "ansible_sg_description" {
+  default = "SG for Ansible Instance"
+}
+
+variable "bastion_sg_description" {
+  default = "SG for Bastion Instance"
+}
