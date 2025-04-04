@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.48.0"
     }
   }
   backend "s3" {
-    bucket = "daws25s-vpc-s3"
-    key    = "expense-dev-db"
-    region = "us-east-1"
+    bucket         = "daws25s-vpc-s3"
+    key            = "expense-dev-apps"
+    region         = "us-east-1"
     dynamodb_table = "expense-vpc"
   }
 }
