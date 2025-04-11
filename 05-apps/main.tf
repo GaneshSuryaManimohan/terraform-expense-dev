@@ -53,8 +53,8 @@ module "ansible" {
     {
       Name = "${var.project_name}-${var.environment}-ansible"
     }
-  depends_on = [ module.backend,module.frontend ]
   )
+  depends_on = [ module.backend,module.frontend ]
 }
 
 module "records" {
@@ -81,7 +81,7 @@ module "records" {
       ]
     },
     {
-      name = "" #surya-devops.online
+      name = "" #surya-devops.site
       type = "A"
       ttl  = 5
       records = [
