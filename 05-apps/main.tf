@@ -67,7 +67,7 @@ module "records" {
     {
       name = "backend"
       type = "A"
-      ttl  = 5
+      ttl  = 1
       records = [
         module.backend.private_ip
       ]
@@ -75,7 +75,7 @@ module "records" {
     {
       name = "frontend"
       type = "A"
-      ttl  = 5
+      ttl  = 1
       records = [
         module.frontend.private_ip
       ]
@@ -83,7 +83,7 @@ module "records" {
     {
       name = "" #surya-devops.site
       type = "A"
-      ttl  = 5
+      ttl  = 1
       records = [
         module.frontend.public_ip
       ]
