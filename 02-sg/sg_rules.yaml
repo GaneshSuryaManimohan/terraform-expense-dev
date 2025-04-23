@@ -46,11 +46,11 @@
   ansible:
   - name: ansible_public
     desc: ansible accepting connections from public
-    source: public #ideally it should be your home IP address/32
+    source: public 
     port: 22
 
   bastion:
   - name: bastion_public
     desc: bastion accepting connections from public
-    source: public
+    source: public #ideally it should be your home IP address/32
     port: 22
